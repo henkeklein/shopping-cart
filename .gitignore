@@ -1,4 +1,6 @@
+#Ignore these directories
 /node_modules/
 /bin/
+#ignore these files
 package.json
 .DS_Store
