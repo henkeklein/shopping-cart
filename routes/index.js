@@ -18,10 +18,16 @@ router.get('/', function(req, res, next) {
   });
 });
 
-router.get('/pdf', function (req, res) {
+router.get('/pdf1', function (req, res) {
         var filePath = "./Dokument-1.pdf";
         fs.readFile(__dirname + filePath , function (err,data){
             res.download(filePath);
+        });
+    });
+router.get('/pdf2', function (req, res) {
+       var filePath = "./Dokument-2.pdf";
+       fs.readFile(__dirname + filePath , function (err,data){
+           res.download(filePath);
         });
     });
 
