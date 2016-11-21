@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Cart = require('../models/cart');
 var Product = require('../models/product');
+var fs = require('fs');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -16,6 +17,13 @@ router.get('/', function(req, res, next) {
 
   });
 });
+
+router.get('/pdf', function (req, res) {
+        var filePath = "./Dokument-1.pdf";
+        fs.readFile(__dirname + filePath , function (err,data){
+            res.download(filePath);
+        });
+    });
 
 router.get('/add-to-cart/:id', function(req, res, next){
   var productId = req.params.id;
